@@ -8,10 +8,17 @@ public class SampleFrame {
         frame.setSize(1760, 990);
         frame.setLocationRelativeTo(null);
 
-        ImageIcon icon = new ImageIcon("C:\\Users\\BT_1N3_27\\IdeaProjects\\Rags2Riches\\src"); // Replace with your actual path
-        Image image = icon.getImage();
+        ImageIcon icon = new ImageIcon("C:\\Users\\BT_1N3_26\\IdeaProjects\\Rags2Riches\\src\\stonkicon.jpg");
+        frame.setIconImage(icon.getImage());
 
-        DisplayPanel panel = new DisplayPanel();
+        DisplayPanel panel = new DisplayPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.setColor(Color.BLACK);
+                g.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
 
         frame.add(panel);
 
